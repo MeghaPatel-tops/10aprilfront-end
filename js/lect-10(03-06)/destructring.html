@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="getUsername()">Click </button>
+
+    <script>
+        let fruits = ['apple','banana','kiwi','manogo','watermallon','chiku'];
+
+
+        let [f1,f2,f3,...rest]=fruits;
+
+        console.log(rest.length);
+        console.log(rest[0]);
+
+        console.log(f1);
+        
+
+        function getUsername(){
+            let fullname = prompt(' Enter firstname middlename aand surname');
+            let [fname,mname,sname]=fullname.split(" ");
+            console.log(fname);
+            console.log(mname);
+            console.log(sname);
+        }
+
+
+           let product = {
+            pname:'laptop',
+            price:21000,
+            description:'lenovo'
+        }
+
+        let {pname,price,description}= product
+
+
+        console.log(pname);
+
+        let jsonStr = JSON.stringify(product);
+        console.log(jsonStr);
+
+        let jsonObj = JSON.parse(jsonStr)
+        console.log(jsonObj);
+        
+        
+    </script>
+</body>
+</html>
