@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(...rest){
+            let sum=0;
+            for(i=0;i<rest.length;i++){
+                sum+=rest[i]
+            }
+            return sum
+        }
+
+           function add1(){
+            let sum=0;
+            for(i=0;i<arguments.length;i++){
+                sum+=arguments[i]
+            }
+            return sum
+        }
+
+        console.log(add(1,2,3,4,5));
+        console.log(add1(1,2,3));
+
+        let numArray = [12,3,456,7,6]
+        console.log(Math.max(...numArray));
+
+        let newArray = [88,99,...numArray,100];
+        console.log(newArray);
+        
+           let user={
+            name:'abc',
+            email:'abc@gmnail.com'
+        }
+
+        let user1 = {...user,contact:"090909090"}
+        console.log(user1);
+        
+        
+    </script>
+</body>
+</html>

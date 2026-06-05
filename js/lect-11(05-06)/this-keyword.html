@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log(this);
+        let user={
+            name:'abc',
+            email:'abc@gmnail.com'
+        }
+
+        user.printMsg=function(){
+            console.log('welcome to app',this.name);
+            
+        }
+
+        console.log(user);
+        
+
+        user.printMsg();
+    </script>
+</body>
+</html>

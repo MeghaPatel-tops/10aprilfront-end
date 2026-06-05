@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let user = {
+            name:'megha'
+        }
+
+        let admin = user;
+
+        admin.email = 'megha@gmail.com';
+
+        console.log(user);
+
+        console.log(user === admin);
+
+        const product ={};
+        product.name="laptop";
+
+        console.log(product);
+
+        product.name="keybord";
+        console.log(product);
+
+        let user1 = {};
+
+        // for(key in user){
+        //     user1[key] =user[key] 
+        // }
+
+        Object.assign(user1,user)
+
+        console.log(user1);
+        user1.contact ="909090909";
+         console.log(user1);
+
+         console.log("or-user",user);
+         
+
+        let user2 = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = Object.assign({}, user2);
+
+console.log(clone);
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>
