@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #ddd;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+            margin: 100px auto;
+        }
+
+        @keyframes spin {
+            0%{
+                border-top: 6px solid #3498db;
+            }
+            25% {
+                /* transform: rotate(0deg); */
+                  border-right: 6px solid #3498db;
+            }
+            50% {
+                /* transform: rotate(360deg); */
+                 border-bottom: 6px solid #3498db;
+            }
+            75%{
+                 border-left: 6px solid #3498db;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="loader" id="load"></div>
+        
+    </div>
+
+    <script>
+        let counter=0;
+        function printData(){
+            document.getElementById('load').style.display="none";
+            document.getElementById('main').innerHTML=`<h1>Welocme to app</h1>`
+        }
+
+        function printCouter(){
+            counter++;
+            console.log('Counter='+counter);
+            
+        }
+
+       setTimeout(printData,2000);
+
+       //setInterval(printCouter,1000);
+    </script>
+</body>
+</html>

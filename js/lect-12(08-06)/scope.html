@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //let and const have block scope
+
+        function test(){
+            let x=100;
+            if(true){
+                var msg="Task done";
+                let x=20;
+                console.log(x);
+                
+            }
+            console.log(msg);
+            
+        }
+        test();
+
+
+        function OuterFunction(){
+            let count=100;
+            return function InnerFunction(){
+                 console.log(count);
+                 
+            }
+        }
+
+        let inFun = OuterFunction();
+        console.log(inFun);
+        inFun();
+
+        console.log(this);
+        
+        
+    </script>
+</body>
+</html>
