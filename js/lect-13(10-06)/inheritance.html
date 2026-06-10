@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Account{
+            constructor(accno,holder,initBal){
+                this.accno=accno;
+                this.holder=holder;
+                this.initBal=initBal;
+            }
+            printPass(){
+                console.log(`
+                   Customer name = ${this.holder}
+                   Account no = ${this.accno}
+                   Balance:${this.initBal}
+                `);
+                
+            }
+            display(){
+                console.log("parent calss display method");
+                
+            }
+        }
+        class CuurentAccount extends Account{
+            constructor(accno,holder,bal,rate){
+                super(accno,holder,bal);
+                this.rate = rate;
+            }
+
+            printBal(){
+                this.initBal = this.initBal - (this.initBal * this.rate)
+                console.log(`Bal:${this.initBal}`);
+                
+            }
+            display(){
+                super.display();
+                console.log("child calss display method");
+                
+            }
+        }
+
+        let acc1 = new CuurentAccount("2000202002","ABC","5000",0.02);
+        acc1.printPass();
+        acc1.printBal();
+        acc1.display();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="CheckAuth()">Click</button>
+    <script>
+        function test(){
+          try {
+               console.log(m);
+            
+          } catch (error) {
+             console.log(error.message);
+             console.log(error.name);
+             
+             
+          }
+        }
+
+        class AuthChecker extends Error{
+             constructor(message){
+                super(message)
+                this.name='AuthenticationError'
+             }
+        }
+
+        function CheckAuth(){
+            try {
+                let user = prompt("Enter user role");
+                if(user !='admin'){
+                    throw new AuthChecker('Unauhorised user');
+                }
+            } catch (error) {
+                console.log(error.message);
+             console.log(error.name);
+             
+            }
+        }
+
+        test();
+        console.log("script loaded after error");
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Test{
+            static s;
+            #privateData = "test data"
+            constructor(x){
+                this.x=x;
+                console.log(this.#privateData);
+            }
+
+            printData(){
+                console.log(`x=${this.x}`);
+                console.log(`Satatic data s=${Test.s}`);
+                
+            }
+            //static method
+            static printSataticData(){
+                 console.log(`Satatic data s=${Test.s}`);
+            }
+            
+        }
+        Test.s=100;
+
+        let t1 = new Test(12);
+        let t2 = new Test(2);
+        let t3 = new Test(123);
+        t1.printData();
+        t2.printData();
+        t3.printData();
+        Test.printSataticData();
+        //console.log(t1.#privateData);=>genrate Error
+        
+        
+    </script>
+</body>
+</html>

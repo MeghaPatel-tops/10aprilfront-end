@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let user={
+            name:"megha",
+            age:31
+        }
+
+        function printMsg(role){
+            console.log(`Welcome :${this.name} and age=${this.age }and role:=${role}`);
+            
+        }
+
+        printMsg.call(user,"admin")
+
+        printMsg.apply(user,["admin"])
+
+        let newBindFunction = printMsg.bind(user,"admin");
+        console.log(newBindFunction);
+
+        newBindFunction();
+        
+    </script>
+</body>
+</html>

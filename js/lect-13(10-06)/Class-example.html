@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Product{
+            constructor(pname,price,description){
+                this.pname=pname;
+                this.price=price;
+                this.description=description;
+            }
+             printProduct(){
+                console.log(`
+                    productName = ${this.pname}
+                    price=${this.price}
+                    description=${this.description}
+                `);
+                
+            }
+        }
+        let p1 = new Product("laptop",21000,"Dell");
+        p1.printProduct();
+    </script>
+</body>
+</html>
