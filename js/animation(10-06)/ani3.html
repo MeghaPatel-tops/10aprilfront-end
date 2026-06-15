@@ -7,24 +7,32 @@
     <style>
         img{
           
-            animation-name:imgMove ;
-            animation-duration: 3s;
-            animation-timing-function: linear;
-            animation-fill-mode: backwards;
+            animation-name:img1bounce ;
+            animation-duration: 6s;
+            animation-timing-function: linear;       
             animation-iteration-count:infinite;
-            animation-direction: alternate-reverse;
+         
             
             
         }
-        @keyframes imgMove {
-    0% {
-        transform: translateX(0px) ;
-    }
-
-    100% {
-        transform: translateX(1100px);
-    }
-}
+      @keyframes img1bounce {
+           
+              0%{
+                  transform: translateX(0px) rotateY(0deg) ;
+              }
+             25%{
+                transform:  translateX(1100px) rotateY(0deg);
+              }
+                50%{
+                  transform: translateX(1100px) ;
+              }
+             51%{
+                transform:translateX(1100px) rotateY(180deg);
+              } 
+              100%{
+                transform: translateX(0px) rotateY(180deg);
+              }
+         }
     </style>
 </head>
 <body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">Promise method</button>
+
+    <script>
+        let p1 = Promise.resolve("task done");
+        let p2 = Promise.reject("error")
+
+        p1.then((msg) => console.log(msg)
+        )
+
+        p2.catch((err) => console.log(err)
+        )
+
+        let productPromise = new Promise((resolve, reject) => {
+            fetch('https://fakestoreapi.com/products')
+                .then(response => response.json())
+                .then(data => resolve(data))
+                .catch(err => reject(err))
+        })
+        let userPromise = new Promise((resolve, reject) => {
+            fetch('https://fakestoreapi.com/sers')
+                .then(response => response.json())
+                .then(data => resolve(data))
+                .catch(err => reject(err))
+        })   
+
+
+        document.getElementById('btn1').addEventListener('click',()=>{
+            Promise.all([productPromise,userPromise])
+            .then((data)=>{
+                console.log("All pomise done");
+                console.log(data);
+                
+            })
+            .catch((err)=>{
+                console.log(err);
+                
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
