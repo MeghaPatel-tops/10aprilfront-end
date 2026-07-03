@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <input type="text" name="" id="txt1" >
+    <ul id="fList">
+       
+    </ul>
+    <script>
+        let fruits =['apple','avacado','banana','breeey','chery','chiku'];
+        document.getElementById('btn1').addEventListener('click',()=>{
+            alert('button clicked')
+        })
+
+        document.getElementById('txt1').addEventListener('keyup',(event)=>{
+            let val = event.target.value;
+            let filterFruist = fruits.filter((index)=>{
+                  if(index.indexOf(val)==0){
+                      return index
+                  }
+            })
+            //console.log(filterFruist);
+            printFruits(filterFruist)
+            
+        })
+
+        function printFruits(fruits){
+            let str='';
+            fruits.forEach((index)=>{
+                str+=` <li>${index}</li>`
+            })
+             document.getElementById('fList').innerHTML=str;
+            //  let liArrray = document.querySelectorAll('li');
+            //    //console.log(liArrray);
+            //     liArrray.forEach((index)=>{
+            //         index.addEventListener('mouseover',()=>{
+            //             index.style.color="red"
+            //         })
+                    
+            //     })
+            document.getElementById('fList').addEventListener('mouseover',(event)=>{
+                console.log(event.target);
+                
+                event.target.style.color="red"
+            })
+        }
+
+        
+       
+        
+
+        window.onload=printFruits(fruits)
+      
+    </script>
+</body>
+</html>

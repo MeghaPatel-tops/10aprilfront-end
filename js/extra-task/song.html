@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <label for="">Add song</label>
+        <input type="text" name="" id="sname">
+        <button onclick="addSong()">Click</button>
+    </fieldset>
+    <ul id="songdata">
+
+    </ul>
+
+    <script>
+        let songs=['bhanajba','hnbnvb   '];
+        function addSong(){
+            let sname = document.getElementById('sname').value;
+            songs.push(sname)
+            console.log(songs);
+            printSong();
+            document.getElementById('sname').value="";
+        }
+        function printSong(){
+            let str="";
+            for(i=0;i<songs.length;i++){
+                str+=`<li>${songs[i]}</li>`
+            }
+            document.getElementById('songdata').innerHTML=str;
+        }
+        window.onload=printSong;
+    </script>
+</body>
+</html>

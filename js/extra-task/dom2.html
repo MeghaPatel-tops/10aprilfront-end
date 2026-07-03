@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light{
+            background-color: white;
+            color:black;
+        }
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+ <button onclick="changeTheme()">Drak/light</button>
+    <div class="main light" id="div1">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque voluptate reprehenderit adipisci alias impedit cumque, velit molestiae id, quos accusantium sit autem eius saepe eos ea. Veritatis beatae unde praesentium.</p>
+       
+    </div>
+
+    <fieldset>
+          <div id="para1">
+
+          </div>
+          <button onclick="genMsg()">Genrate Msg</button>
+          <button onclick="removeMsg()" id="btn2" style="display: none;">Remove Msg</button>
+    </fieldset>
+    <script>
+        let theme='light';
+        function changeTheme(){
+           theme = (theme=='light')?'dark':'light';
+            
+            let remClass = theme=='dark'?'light':'dark';
+            console.log(remClass);
+            
+            let addClass = theme=='dark'?'dark':'light';
+            //document.getElementById('div1').classList.remove(remClass);
+            //document.getElementById('div1').classList.add(addClass)
+             document.getElementById('div1').classList.toggle('dark')
+        }
+
+        function genMsg(){
+            let name=prompt("Enter your name");
+            let p1 = document.createElement('p');
+            p1.textContent=`Welcome to app:${name}`;
+            p1.setAttribute('id','rmPara')
+            console.log(p1);
+            document.getElementById('para1').appendChild(p1)
+            document.getElementById('btn2').style.display="inline-block"
+        }
+        function removeMsg(){
+            let p1 = document.getElementById('rmPara')
+            console.log(p1);
+             document.getElementById('para1').removeChild(p1)
+        }
+    </script>
+</body>
+</html>

@@ -167,7 +167,8 @@
 
         if(localStorage.getItem('user')){
             let oldArray = JSON.parse(localStorage.getItem('user'));
-             oldArray.splice(id,1,user)
+           
+            
             localStorage.setItem('user',JSON.stringify(oldArray));
 
         }

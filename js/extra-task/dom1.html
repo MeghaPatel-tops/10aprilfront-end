@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            gap:10px
+        }
+        .box{
+            height: 50px;
+            width: 50px;
+            border :1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Color text change</legend>
+        <p id="para1">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quam suscipit ut, quod quis quisquam ex neque quibusdam earum ullam illo dicta officia esse assumenda a vel ipsam quos dolorum!
+        </p>
+        <button onclick="chnageColor()">click</button>
+
+        
+    </fieldset>
+    <fieldset>
+         <div class="main">
+              <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <button onclick="getAllBox()">Get all Boxes</button>
+         </div>
+    </fieldset>
+     <fieldset>
+          <label for="">Hobby</label>
+          <input type="checkbox" name="" id="" value="Sports">Sports
+          <input type="checkbox" name="" id="" value="Dance">Dance
+          <input type="checkbox" name="" id="" value="Music">Music
+          <button onclick="getHobby()">Get hobby</button>
+    </fieldset>
+    <fieldset>
+        <p id="para2"></p>
+        <button onclick="printMsg()">Add username</button>
+    </fieldset>
+
+    <script>
+        function chnageColor(){
+            let p1 = document.getElementById('para1');
+            console.log(p1);
+            p1.style.color="blue"
+            p1.style.backgroundColor="gray"
+            
+        }
+
+        function getAllBox(){
+            let boxArray = document.getElementsByClassName('box');
+            console.log(boxArray);
+            for(let i =0;i<boxArray.length;i++){
+                if(i%2==0){
+                    boxArray[i].style.backgroundColor="red"
+                }
+            }
+            
+        }
+
+        function getHobby(){
+            let hArray = document.querySelectorAll('input[type="checkbox"]');
+            console.log(hArray);
+            let nHobby = [];
+            hArray.forEach((index)=>{
+                 if(index.checked == true){
+                    
+                    nHobby.push(index.value)
+                    
+                 }
+            })
+            console.log(nHobby);
+            
+            
+        }
+
+        function printMsg(){
+            let user = prompt("Enter username");
+            //document.getElementById('para2').textContent=`welcome ${user}`
+            document.getElementById('para2').innerHTML=`welcome <b>${user}</b>`
+        }
+    </script>
+</body>
+</html>
