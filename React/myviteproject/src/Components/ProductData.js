@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    name: "Wireless Headphones",
+    
     price: 2999,
     category: "Electronics",
     image: "https://picsum.photos/id/180/400/400"

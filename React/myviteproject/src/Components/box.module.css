@@ -1,0 +1,5 @@
+.reddiv{
+    padding: 50px;
+    background:linear-gradient(red,rgb(207, 95, 95));
+    color: white;
+}

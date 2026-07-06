@@ -3,15 +3,14 @@ import products from './ProductData';
 import ProductCard from './ProductCard';
 
 function ProductCatalog() {
-    console.log(products);
-    
+  
   return (
     <div>
         <h2>Product Catalog</h2>
         <div className="row">
             {
                 (products) ? products.map((index,i)=>(
-                    <ProductCard product={index}/>
+                    <ProductCard key={i} name={111} image={index.image} price={index.price}/>
                 )):(<p>NoData Found</p>)
             }
         </div>

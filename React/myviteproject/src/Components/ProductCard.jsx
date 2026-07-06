@@ -1,13 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function ProductCard(props) {
+function ProductCard({name,image,price}) {
+
   return (
     <div>
-        <img src={props.product.image} alt="" />
-        <h3>{props.product.name}</h3>
-        <p><b>Price:{props.product.price}</b></p>
+        <img src={image} alt="" />
+        <h3>{name}</h3>
+        <p><b>Price:{price}</b></p>
     </div>
   )
+}
+
+ProductCard.propTypes={
+ name: PropTypes.string.isRequired,
 }
 
 export default ProductCard
