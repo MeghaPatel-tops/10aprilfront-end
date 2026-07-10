@@ -4,7 +4,8 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
-
+import products from './Components/db'
+import ProductCard from './Components/ProductCard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,14 @@ function App() {
                 <Navbar/>
           </header>
           <Hero/>
+         {/* <div className="flex text-white p-20 justify-between">
+               {
+             products && products.map((index,i)=>(
+                 <ProductCard key={i} product={index}/>
+             ))
+          }
+         </div> */}
+
       </div>
     </>
   )
