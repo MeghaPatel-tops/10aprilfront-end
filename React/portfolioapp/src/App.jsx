@@ -6,6 +6,8 @@ import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
 import products from './Components/db'
 import ProductCard from './Components/ProductCard'
+import FruitsData from './Components/FruitsData'
+import UserReg from './Components/UserReg'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +26,8 @@ function App() {
              ))
           }
          </div> */}
+         <FruitsData/>
+         <UserReg/>
 
       </div>
     </>
