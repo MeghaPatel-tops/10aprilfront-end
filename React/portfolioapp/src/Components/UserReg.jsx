@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function UserReg() {
     const [user,setUser]=useState([]);
     const [sUser,setSUser]=useState({});
+    const [edit,setEdit]=useState(null);
 
     const handleChange = (e)=>{
         const{name,value}=e.target;
@@ -25,6 +26,25 @@ function UserReg() {
         setSUser({})
     }
 
+    const handleDelete=(id)=>{
+        let newArray = user.filter((index,i)=>i!=id)
+        setUser(newArray)
+    }
+
+    const handleEdit = (id)=>{
+        setEdit(id)
+        setSUser(user[id])
+    }
+
+    const handleUpdate=(e)=>{
+       e.preventDefault();
+          user[edit]=sUser;
+          setUser(user)
+          setEdit(null)
+          setSUser({})
+          
+    }
+
   return (
     <div>
         <div className="min-h-screen bg-gray-100 p-8">
@@ -36,7 +56,7 @@ function UserReg() {
         User Registration
       </h2>
 
-      <form className="space-y-5" method='post' onSubmit={handleClick}>
+      <form className="space-y-5" method='post' onSubmit={edit==null ? handleClick : handleUpdate}>
 
         <div>
           <label className="block text-gray-600 mb-2">Full Name</label>
@@ -79,7 +99,7 @@ function UserReg() {
         <button
           className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 duration-300 font-semibold"
         >
-          Register User
+          {edit==null ? "Register User":"Update user"}
         </button>
 
       </form>
@@ -133,11 +153,15 @@ function UserReg() {
             <td className="p-3">
               <div className="flex justify-center gap-2">
 
-                <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg">
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg" onClick={()=>{
+                  handleEdit(i)
+                }}>
                   Edit
                 </button>
 
-                <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">
+                <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"  onClick={()=>{
+                  handleDelete(i)
+                }}>
                   Delete
                 </button>
 

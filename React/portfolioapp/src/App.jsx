@@ -8,6 +8,8 @@ import products from './Components/db'
 import ProductCard from './Components/ProductCard'
 import FruitsData from './Components/FruitsData'
 import UserReg from './Components/UserReg'
+import HookEx from './Components/HookEx'
+import ApiData from './Components/ApiData'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,9 +28,10 @@ function App() {
              ))
           }
          </div> */}
-         <FruitsData/>
+         {/* <FruitsData/>
          <UserReg/>
-
+         <HookEx/> */}
+          <ApiData/>
       </div>
     </>
   )
