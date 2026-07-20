@@ -10,9 +10,11 @@ import FruitsData from './Components/FruitsData'
 import UserReg from './Components/UserReg'
 import HookEx from './Components/HookEx'
 import ApiData from './Components/ApiData'
+import User from './Components/User'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const user = {Username:"Megha",email:'m@gmail.com',Uid:101};
 
   return (
     <>
@@ -31,7 +33,8 @@ function App() {
          {/* <FruitsData/>
          <UserReg/>
          <HookEx/> */}
-          <ApiData/>
+          <ApiData user={user}/>
+          {/* <User/> */}
       </div>
     </>
   )
